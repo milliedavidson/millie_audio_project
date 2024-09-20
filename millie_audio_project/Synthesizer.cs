@@ -40,11 +40,13 @@ namespace millie_audio_project
             {
                 // Algorithm from: https://www.youtube.com/watch?v=fp1Snqq9ovw
                 // This algorithm generates the sine wave (and is why the short values goes up and down like a WAVE)
+                // Could make this a method or function
                 wave[i] = Convert.ToInt16(short.MaxValue * Math.Sin(((Math.PI * 2 * frequency) / SampleRate) * i));
             }
 
             // Check the parameters required for the method below. Offset is 0, so it starts at the start. Splits every
             // short into 2 bytes and writes them into binaryWave
+            // BlockCopy is resizing the data
             Buffer.BlockCopy(wave, 0, binaryWave, 0, wave.Length * sizeof(short));
 
             // To play the samples generated in the for loop, they have to be passed to software that will handle the
@@ -54,6 +56,9 @@ namespace millie_audio_project
 
             // MemoryStream contains all the chunk information from the link above. Everything we write into MemoryStream
             // with BinaryWriter comes from the requirements in the link above
+            // using statement is here to help with resource management. Frees up the connection with the file/object.
+            // Not having this can cause memory leaks
+            // Look up the code for Stream
             using (MemoryStream memoryStream = new MemoryStream())
             using (BinaryWriter binaryWriter = new BinaryWriter(memoryStream))
             {

@@ -34,7 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1729, 1017);
             KeyPreview = true;
             Name = "Synthesizer";
             Text = "Synthesizer";
