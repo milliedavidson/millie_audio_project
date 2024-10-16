@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            button1 = new Button();
             checkBox1 = new CheckBox();
+            button1 = new Button();
             button2 = new Button();
+            oscillator1 = new Oscillator();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,15 +47,6 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // button1
-            // 
-            button1.Location = new Point(625, 215);
-            button1.Name = "button1";
-            button1.Size = new Size(188, 58);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
@@ -65,6 +57,15 @@
             checkBox1.Text = "checkBox1";
             checkBox1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.Location = new Point(625, 215);
+            button1.Name = "button1";
+            button1.Size = new Size(188, 58);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             button2.Location = new Point(141, 492);
@@ -74,11 +75,22 @@
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
             // 
+            // oscillator1
+            // 
+            oscillator1.Location = new Point(128, 40);
+            oscillator1.Name = "oscillator1";
+            oscillator1.Size = new Size(937, 206);
+            oscillator1.TabIndex = 2;
+            oscillator1.TabStop = false;
+            oscillator1.Text = "oscillator1";
+            oscillator1.Enter += oscillator1_Enter;
+            // 
             // Synthesizer
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1729, 1017);
+            Controls.Add(oscillator1);
             Controls.Add(button2);
             Controls.Add(groupBox1);
             KeyPreview = true;
@@ -97,5 +109,6 @@
         private CheckBox checkBox1;
         private Button button1;
         private Button button2;
+        private Oscillator oscillator1;
     }
 }

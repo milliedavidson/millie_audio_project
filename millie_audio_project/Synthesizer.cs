@@ -32,7 +32,7 @@ namespace millie_audio_project
             byte[] binaryWave = new byte[SampleRate * sizeof(short)]; /* short because it's the data type of wave and
             we want 2 lots of 8 bits to create this byte array. We could just put 2 here but, using sizeof makes
             our intent clearer */
-            
+
             float frequency = 440f;
 
             // i is the unit of time for each sample in SampleRate. TODO: Why 'i' for time? Isn't 't' or 'time' clearer?
@@ -84,8 +84,13 @@ namespace millie_audio_project
                 /* Now we have the stream of data, the SoundPlayer class can accept it. memoryStream has a position
                 (like a pointer) which is why we set the position below. 0 takes us to the start (to RIFF) */
                 memoryStream.Position = 0;
-                new SoundPlayer(memoryStream).Play();
+                new SoundPlayer(memoryStream).Play(); // TODO: Get this working and structure better e.g. subclasses
             }
+        }
+
+        private void oscillator1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
