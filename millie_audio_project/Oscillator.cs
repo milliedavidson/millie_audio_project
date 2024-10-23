@@ -1,6 +1,7 @@
 ﻿namespace millie_audio_project
 {
-    public class Oscillator : GroupBox // Oscillator inherits all functionality from GroupBox
+    // Oscillator inherits all functionality from GroupBox
+    public class Oscillator : GroupBox
     {
         public Oscillator()
         {
@@ -13,8 +14,7 @@
                 Text = "Sine" // Same as the name
             });
 
-            // Repeat the above for each button TODO: must be a sleeker way to do this?
-            // Extension method (e..g addButton)
+            // Repeat the above for each button. TODO: Create an extension method for this e.g. addButton
             this.Controls.Add(new Button()
             {
                 Name = "Square",
@@ -51,7 +51,15 @@
             }
         }
 
-        private void WaveButtonClick(object sender, EventArgs e)
+        public WaveForm WaveForm { get; set; }
+
+        /* EventHandler delegate (see more details in the README). Handles events for the the 'click' event on any of
+        the wave buttons. Will also handle an event that has no event data. The naming convention for a click event is 
+        to have the underscore (I think). 'sender' is the source of the event and 'e' is an object that contains no 
+        event data. TODO: Organise this by moving to another file/folder? */
+        private void WaveButton_Click(object sender, EventArgs e)
         {
 
         }
+    }
+}

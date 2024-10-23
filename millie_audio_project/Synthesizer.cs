@@ -54,7 +54,7 @@ namespace millie_audio_project
 
             /* MemoryStream contains all the chunk information from the link above. Everything we write into MemoryStream
             with BinaryWriter comes from the requirements in the link above. using statement is here to help with resource
-            management - frees up the connection with the file/object (not having this can cause memory leaks). 
+            management - frees up the connection with the file/object (not having this can cause memory leaks).
             TODO: Look up the code for Stream */
             using MemoryStream memoryStream = new MemoryStream();
             using BinaryWriter binaryWriter = new BinaryWriter(memoryStream);
@@ -87,10 +87,10 @@ namespace millie_audio_project
                 new SoundPlayer(memoryStream).Play(); // TODO: Get this working and structure better e.g. subclasses
             }
         }
+    }
 
-        private void oscillator1_Enter(object sender, EventArgs e)
-        {
+    public enum WaveForm
+    {
 
-        }
     }
 }
