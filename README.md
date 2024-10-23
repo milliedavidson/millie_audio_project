@@ -16,7 +16,7 @@ Find GroupBox here: **View > Toolbox > All Windows Forms > GroupBox**
 
 GroupBox is a **parent** control (meaning everything inside it will be controlled). Anything outside of the GroupBox will have the WindowsForm as the parent. This is illustrated below:
 
-![GroupBox annotation](GroupBoxAnnotation.PNG)
+![GroupBox annotation](https://github.com/milliedavidson/millie_audio_project/blob/master/millie_audio_project/docs/GroupBoxAnnotation.PNG)
 
 ---
 
