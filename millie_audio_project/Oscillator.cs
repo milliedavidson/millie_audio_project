@@ -1,8 +1,4 @@
-﻿using System;
-using System.Windows.Forms; // inherit from the groupBox control
-using System.Drawing;
-
-namespace millie_audio_project
+﻿namespace millie_audio_project
 {
     public class Oscillator : GroupBox // Oscillator inherits all functionality from GroupBox
     {
@@ -13,7 +9,7 @@ namespace millie_audio_project
             {
                 // Assign properties to the button
                 Name = "Sine",
-                Location = new(10, 15), // This is the location of the button on the form
+                Location = new(50, 100), // This is the location of the button on the form
                 Text = "Sine" // Same as the name
             });
 
@@ -22,30 +18,40 @@ namespace millie_audio_project
             this.Controls.Add(new Button()
             {
                 Name = "Square",
-                Location = new(65, 15),
+                Location = new(50, 300),
                 Text = "Square"
             });
 
             this.Controls.Add(new Button()
             {
                 Name = "Saw",
-                Location = new(120, 15),
+                Location = new(300, 100),
                 Text = "Saw"
             });
 
             this.Controls.Add(new Button()
             {
                 Name = "Triangle",
-                Location = new(10, 50),
+                Location = new(300, 300),
                 Text = "Triangle"
             });
 
             this.Controls.Add(new Button()
             {
                 Name = "Noise",
-                Location = new(65, 50),
+                Location = new(550, 100),
                 Text = "Noise"
             });
+
+            // Loop over the controls above to add size and font consistently
+            foreach (Control control in this.Controls)
+            {
+                control.Size = new Size(225, 100);
+                control.Font = new Font("Microsoft Sans Serif", 8);
+            }
         }
-    }
-}
+
+        private void WaveButtonClick(object sender, EventArgs e)
+        {
+
+        }
