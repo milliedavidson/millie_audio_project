@@ -53,13 +53,13 @@
 
         public WaveForm WaveForm { get; set; }
 
-        /* EventHandler delegate (see more details in the README). Handles events for the the 'click' event on any of
+        /* EventHandler delegate (see more details in the README). Handles events for the 'click' event on any of
         the wave buttons. Will also handle an event that has no event data. The naming convention for a click event is 
         to have the underscore (I think). 'sender' is the source of the event and 'e' is an object that contains no 
         event data. TODO: Organise this by moving to another file/folder? */
         private void WaveButton_Click(object sender, EventArgs e)
         {
-
+            Button button = (Button)sender; // cast the sender to a button so we don't have to do this throughout
         }
     }
 }
