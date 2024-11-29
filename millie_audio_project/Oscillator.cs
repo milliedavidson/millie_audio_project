@@ -1,4 +1,5 @@
 ﻿namespace millie_audio_project
+
 {
     // Oscillator inherits all functionality from GroupBox
     public class Oscillator : GroupBox
@@ -11,7 +12,7 @@
                 // Assign properties to the button
                 Name = "Sine",
                 Location = new(50, 100), // This is the location of the button on the form
-                Text = "Sine" // Same as the name
+                Text = "Sine", // Same as the name
             });
 
             // Repeat the above for each button. TODO: Create an extension method for this e.g. addButton
@@ -48,6 +49,7 @@
             {
                 control.Size = new Size(225, 100);
                 control.Font = new Font("Microsoft Sans Serif", 8);
+                control.Click += WaveButton_Click;
             }
         }
 
@@ -60,6 +62,18 @@
         private void WaveButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender; // cast the sender to a button so we don't have to do this throughout
+
+            // Parse the text of the button that's been pressed to the enum value i.e. the string "sine"
+            this.WaveForm =
+                (WaveForm)Enum.Parse(typeof(WaveForm),
+                    button.Text); // no need for tryParse, as the string matches the enum value#
+
+            foreach (Button otherButtons in this.Controls.OfType<Button>())
+            {
+                otherButtons.UseVisualStyleBackColor = true; // Background colour of the entire box (not the button)
+            }
+
+            button.BackColor = Color.Coral; // Identify what button was pressed last    
         }
     }
 }

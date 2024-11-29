@@ -38,6 +38,8 @@
             oscillator1.Size = new Size(1029, 498);
             oscillator1.TabIndex = 0;
             oscillator1.TabStop = false;
+            oscillator1.WaveForm = WaveForm.Sine;
+            oscillator1.Enter += oscillator1_Enter;
             // 
             // Synthesizer
             // 

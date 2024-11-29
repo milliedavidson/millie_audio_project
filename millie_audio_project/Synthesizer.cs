@@ -87,10 +87,15 @@ namespace millie_audio_project
                 new SoundPlayer(memoryStream).Play(); // TODO: Get this working and structure better e.g. subclasses
             }
         }
+
+        private void oscillator1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public enum WaveForm
     {
-
+        Sine, Square, Saw, Triangle, Noise // Default value of enum is 0
     }
 }
